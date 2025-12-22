@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owais Ali - MERN Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #475569;
+            --accent: #2563eb;
+            --text: #1e293b;
+            --bg: #ffffff;
+            --border: #e2e8f0;
+            --light-accent: #eff6ff;
+        }
+
+        @media print {
+            body {
+                padding: 0 !important;
+                background: white !important;
+            }
+
+            .cv-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: none !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background: #f8fafc;
+            padding: 50px 20px;
+        }
+
+        .cv-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: var(--bg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            padding: 60px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent), #3b82f6, #60a5fa);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
+            margin-bottom: 4px;
+        }
+
+        .header-content .title-subtitle {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 12px 25px;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .section-title .line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .summary {
+            font-size: 1.05rem;
+            color: var(--secondary);
+            line-height: 1.7;
+            text-align: justify;
+            background: var(--light-accent);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 45px;
+        }
+
+        .experience-item,
+        .education-item {
+            margin-bottom: 24px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .item-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--secondary);
+            background: #f1f5f9;
+            padding: 2px 10px;
+            border-radius: 4px;
+        }
+
+        .item-sub {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            list-style: none;
+        }
+
+        .item-desc li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 6px;
+        }
+
+        .item-desc li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .skill-group {
+            margin-bottom: 20px;
+        }
+
+        .skill-group h3 {
+            font-size: 0.85rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+        }
+
+        .skill-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-list li {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 5px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--secondary);
+            transition: all 0.2s ease;
+        }
+
+        .skill-list li:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--light-accent);
+        }
+
+        .footer-note {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--secondary);
+        }
+
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+            transition: transform 0.2s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            background: var(--accent);
+        }
+
+        .accent-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="javascript:window.print()" class="download-btn no-print">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Save as PDF
+    </a>
+
+    <div class="cv-container">
+        <header>
+            <div class="header-content">
+                <h1>Owais Ali</h1>
+                <div class="title-subtitle">Full Stack Web Developer</div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Karachi, Pakistan
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        0331-6078214
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        owaais008@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        github.com/owaais008-hub
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">
+                <h2>Profile</h2>
+                <div class="line"></div>
+            </div>
+            <p class="summary">
+                Highly motivated <span class="accent-text">MERN Stack Developer</span> with a passion for building
+                scalable, user-centric web applications. Specializing in the modern JavaScript ecosystem, I have a
+                proven track record of translating complex requirements into functional, aesthetic digital solutions. I
+                possess strong expertise in React.js, Node.js, and MongoDB, and am eager to leverage these skills to
+                drive impact in a challenging development application.
+            </p>
+        </section>
+
+        <div class="main-grid">
+            <div class="col-left">
+                <section>
+                    <div class="section-title">
+                        <h2>Key Projects</h2>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <span class="item-name">Flux Solution Platform</span>
+                            <span class="item-date">2024</span>
+                        </div>
+                        <div class="item-sub">React | Supabase | Framer Motion</div>
+                        <div class="project-links"
+                            style="margin-bottom: 12px; display: flex; gap: 15px; font-size: 0.85rem;">
+                            <a href="https://github.com/owaais008-hub/FLUX-Solution-web.git" target="_blank"
+                                class="project-link"
+                                style="color: var(--accent); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                GitHub Code
+                            </a>
+                            <a href="https://flux-solution-web.vercel.app" target="_blank" class="project-link"
+                                style="color: var(--accent); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                        <ul class="item-desc">
+                            <li>Architected a premium digital agency platform with dynamic rendering and cloud-based
+                                asset management.</li>
+                            <li>Engineered sophisticated micro-interactions and smooth scroll animations for a high-end
+                                brand feel.</li>
+                            <li>Optimized performance markers achieving high scores in Cumulative Layout Shift and
+                                Largest Contentful Paint.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <span class="item-name">Enterprise Event Tracker</span>
+                            <span class="item-date">2024</span>
+                        </div>
+                        <div class="item-sub">MongoDB | Express | Socket.io | JWT</div>
+                        <div class="project-links"
+                            style="margin-bottom: 12px; display: flex; gap: 15px; font-size: 0.85rem;">
+                            <a href="https://github.com/owaais008-hub/Event-management-system.git" target="_blank"
+                                class="project-link"
+                                style="color: var(--accent); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                GitHub Code
+                            </a>
+                            <a href="https://event-management-system-mern.vercel.app" target="_blank"
+                                class="project-link"
+                                style="color: var(--accent); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                        <ul class="item-desc">
+                            <li>Built a real-time event management dashboard with multi-role access control and live
+                                notification streams.</li>
+                            <li>Implemented secure authentication flows using industry-standard JWT and encrypted cookie
+                                storage.</li>
+                            <li>Designed a responsive administrative interface for managing massive datasets with ease.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <span class="item-name">Pro-Ticketing Engine</span>
+                            <span class="item-date">2023</span>
+                        </div>
+                        <div class="item-sub">MERN Stack | Redux Toolkit | Cloudinary</div>
+                        <div class="project-links"
+                            style="margin-bottom: 12px; display: flex; gap: 15px; font-size: 0.85rem;">
+                            <a href="https://github.com/owaais008-hub/cricket-ticket-booker.git" target="_blank"
+                                class="project-link"
+                                style="color: var(--accent); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                GitHub Code
+                            </a>
+                            <a href="https://cricket-ticket-booker.vercel.app" target="_blank" class="project-link"
+                                style="color: var(--accent); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                        <ul class="item-desc">
+                            <li>Developed a scalable e-ticketing platform with complex inventory management and payment
+                                simulation.</li>
+                            <li>Mastered centralized state management with Redux Toolkit for seamless data flow across
+                                the application.</li>
+                            <li>Integrated Cloudinary for automated image optimization and resilient cloud storage.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="section-title">
+                        <h2>Education</h2>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <span class="item-name">HDSE in Software Engineering</span>
+                            <span class="item-date">2023 — 2025</span>
+                        </div>
+                        <div class="item-sub">Aptech Metro Star Gate, Karachi</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <span class="item-name">Intermediate (Science)</span>
+                            <span class="item-date">In-progress</span>
+                        </div>
+                        <div class="item-sub">Allama Iqbal Gov Boys College, Karachi</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <span class="item-name">Secondary School Certificate</span>
+                            <span class="item-date">2020 — 2022</span>
+                        </div>
+                        <div class="item-sub">Falcon House Grammar School, Karachi</div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-right">
+                <section>
+                    <div class="section-title">
+                        <h2>Technical Arsenal</h2>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Frontend</h3>
+                        <ul class="skill-list">
+                            <li>React.js</li>
+                            <li>Next.js</li>
+                            <li>Redux Toolkit</li>
+                            <li>TypeScript</li>
+                            <li>Tailwind CSS</li>
+                            <li>Framer Motion</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group" style="margin-top: 25px;">
+                        <h3>Backend</h3>
+                        <ul class="skill-list">
+                            <li>Node.js</li>
+                            <li>Express.js</li>
+                            <li>REST APIs</li>
+                            <li>Socket.io</li>
+                            <li>JWT Auth</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group" style="margin-top: 25px;">
+                        <h3>Database & Tools</h3>
+                        <ul class="skill-list">
+                            <li>MongoDB</li>
+                            <li>MySQL</li>
+                            <li>GitHub/Git</li>
+                            <li>Supabase</li>
+                            <li>Postman</li>
+                            <li>Vite</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="section-title">
+                        <h2>Soft Skills</h2>
+                        <div class="line"></div>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Problem Solving</li>
+                        <li>Team Collaboration</li>
+                        <li>Adaptability</li>
+                        <li>Clean Code</li>
+                        <li>Documentation</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <div class="section-title">
+                        <h2>Languages</h2>
+                        <div class="line"></div>
+                    </div>
+                    <ul class="skill-list">
+                        <li>English</li>
+                        <li>Urdu (Native)</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer-note">
+            &nbsp;
+        </footer>
+    </div>
+</body>
+
+</html>
