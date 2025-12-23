@@ -6,7 +6,7 @@
   "description": "Frontend for MERN Portfolio - A modern portfolio website built with the MERN stack",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npx vite build",
     "preview": "vite preview",
     "start": "vite"
   },
@@ -17,26 +17,26 @@
     "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
-    "typescript": "~5.9.3",
-    "vite": "^7.2.4"
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.4.2",
+    "@react-three/drei": "^9.120.4",
+    "@react-three/fiber": "^8.15.23",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
-    "@vitejs/plugin-react": "^5.1.2",
+    "@vitejs/plugin-react": "^4.3.4",
     "axios": "^1.13.2",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.23.26",
+    "framer-motion": "^11.18.3",
     "lucide-react": "^0.454.0",
     "maath": "^0.10.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",
-    "react-router-dom": "^7.11.0",
-    "react-vertical-timeline-component": "^3.5.3",
+    "react-router-dom": "^6.22.0",
+    "react-vertical-timeline-component": "^3.3.6",
     "tailwind-merge": "^2.6.0",
     "three": "^0.182.0"
   }
