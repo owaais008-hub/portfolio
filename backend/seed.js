@@ -31,6 +31,14 @@ const sampleProjects = [
     liveUrl: 'https://example.com',
     githubUrl: 'https://github.com/example/weather',
     featured: false
+  },
+  {
+    title: 'Cricket Ticket Booker',
+    description: 'A comprehensive cricket ticket booking application with real-time availability, secure payment processing, and user-friendly interface for booking cricket match tickets.',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
+    liveUrl: 'https://cricket-ticket-booker-client-lgwl71y1i-owais-projects-19710b90.vercel.app/',
+    githubUrl: 'https://github.com/owaais008-hub/cricket-ticket-booker.git',
+    featured: true
   }
 ];
 

@@ -138,9 +138,9 @@ export const projects = [
         live_link: "https://event-management-system-mern.vercel.app",
     },
     {
-        name: "Pro-Ticketing System",
+        name: "Cricket Ticket Booker",
         description:
-            "An advanced ticketing system engineered for scalability and real-time responsiveness. Implements a robust admin dashboard for oversight, automated notifications, and a seamless checkout experience for high-traffic environments.",
+            "A comprehensive cricket ticket booking application with real-time availability, secure payment processing, and user-friendly interface for booking cricket match tickets.",
         tags: [
             {
                 name: "Express.js",
@@ -157,7 +157,7 @@ export const projects = [
         ],
         image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=60",
         source_code_link: "https://github.com/owaais008-hub/cricket-ticket-booker.git",
-        live_link: "https://cricket-ticket-booker.vercel.app",
+        live_link: "https://cricket-ticket-booker-client-lgwl71y1i-owais-projects-19710b90.vercel.app/",
     },
 ];
 

@@ -1,5 +1,7 @@
-import React, { createContext, useContext, ReactNode } from 'react';
-import useNotification, { Notification } from '../hooks/useNotification';
+import React, { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
+import useNotification from '../hooks/useNotification';
+import type { Notification } from '../hooks/useNotification';
 import NotificationComponent from './Notification';
 
 interface NotificationContextType {
