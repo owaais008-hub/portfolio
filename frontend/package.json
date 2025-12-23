@@ -6,7 +6,7 @@
   "description": "Frontend for MERN Portfolio - A modern portfolio website built with the MERN stack",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && npx vite build",
     "preview": "vite preview",
     "start": "vite"
   },
