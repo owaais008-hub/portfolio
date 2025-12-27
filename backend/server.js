@@ -52,3 +52,11 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio
 
 // Export the app for Vercel serverless functions
 module.exports = app;
+
+// Start the server if running locally (not in a serverless environment)
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
