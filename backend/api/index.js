@@ -1,3 +1,3 @@
-export default function handler(req, res) {
-  res.status(200).json({ message: 'Welcome to the Portfolio API' });
-}
+const app = require('../server');
+
+module.exports = app;
