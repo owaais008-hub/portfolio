@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an axios instance
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api', // Backend server URL
+  baseURL: import.meta.env.VITE_API_URL || 'https://backend-orpin-delta-46.vercel.app/api', // Backend server URL
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
