@@ -1,4 +1,4 @@
-import { Code2, Palette, Server, Layers } from "lucide-react";
+
 
 export const navLinks = [
     {
@@ -15,24 +15,9 @@ export const navLinks = [
     },
 ];
 
-export const services = [
-    {
-        title: "Modern Frontend Dev",
-        icon: Code2,
-    },
-    {
-        title: "Immersive UI/UX",
-        icon: Palette,
-    },
-    {
-        title: "Scalable Backend",
-        icon: Server,
-    },
-    {
-        title: "Enterprise Architecture",
-        icon: Layers,
-    },
-];
+
+
+export const services = [];
 
 export const technologies = [
     {
