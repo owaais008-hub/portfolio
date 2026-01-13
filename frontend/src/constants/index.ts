@@ -113,7 +113,7 @@ export const projects = [
         ],
         image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&auto=format&fit=crop&q=60",
         source_code_link: "https://github.com/owaais008-hub/FLUX-Solution-web.git",
-        live_link: "https://flux-solution-web.vercel.app",
+        live_link: "https://flux-solution-web-new.vercel.app/",
     },
     {
         name: "Enterprise Event Management",
@@ -135,7 +135,7 @@ export const projects = [
         ],
         image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=60",
         source_code_link: "https://github.com/owaais008-hub/Event-management-system.git",
-        live_link: "https://event-management-system-mern.vercel.app",
+        live_link: "https://event-management-system-git-main-owais-projects-19710b90.vercel.app/",
     },
     {
         name: "Cricket Ticket Booker",
