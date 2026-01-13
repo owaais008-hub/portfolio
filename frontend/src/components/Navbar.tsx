@@ -195,7 +195,7 @@ const Navbar: React.FC = () => {
                     ))}
                     <li>
                         <motion.a
-                            href="/Professional_CV.html"
+                            href="/Owais_CV.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-primary"
@@ -322,7 +322,7 @@ const Navbar: React.FC = () => {
                             </motion.a>
                         ))}
                         <motion.a
-                            href="/Professional_CV.html"
+                            href="/Owais_CV.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-primary"
